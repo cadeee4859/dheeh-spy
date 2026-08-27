@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <a class="logo" href="#products" aria-label="Shop home">Shop</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#products">Products</a>
+        <button type="button" id="cart-button" aria-controls="cart-modal">
+          Cart <span class="cart-count" id="cart-count">0</span>
+        </button>
+        <button type="button" id="account-button" aria-controls="account-modal">Account</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="products-section" id="products" aria-labelledby="products-title">
+      <div class="section-heading">
+        <p class="eyebrow">Simple things, chosen well</p>
+        <h1 id="products-title">Products</h1>
+        <p class="section-intro">Find a few useful favorites for your everyday routine.</p>
+      </div>
+
+      <div class="product-grid" id="product-list">
+        <article class="product-card">
+          <div class="product-image product-image-one">
+            <img src="images/morocco-bath.jpg" alt="Morocco Bath product" onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+            <span hidden>01</span>
+          </div>
+          <div class="product-details">
+            <h2>Morocco Bath</h2>
+            <p>A refreshing bath essential for a calm and comfortable routine.</p>
+            <div class="product-footer">
+              <strong>1,250 ETB</strong>
+              <button class="add-button" type="button" data-product-id="1">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image product-image-two">
+            <img src="images/facial.jpg" alt="Facial product" onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+            <span hidden>02</span>
+          </div>
+          <div class="product-details">
+            <h2>Facial</h2>
+            <p>A gentle everyday facial essential for fresh, cared-for skin.</p>
+            <div class="product-footer">
+              <strong>480 ETB</strong>
+              <button class="add-button" type="button" data-product-id="2">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image product-image-three">
+            <img src="images/hair-treatment.jpg" alt="Hair Treatment product" onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+            <span hidden>03</span>
+          </div>
+          <div class="product-details">
+            <h2>Hair Treatment</h2>
+            <p>A nourishing treatment to help keep your hair soft and healthy.</p>
+            <div class="product-footer">
+              <strong>1,890 ETB</strong>
+              <button class="add-button" type="button" data-product-id="3">Add to Cart</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="cart-modal" hidden>
+    <section class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">Your selection</p>
+          <h2 id="cart-title">Cart</h2>
+        </div>
+        <button class="close-button" id="close-cart" type="button" aria-label="Close cart">&times;</button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="empty-cart" id="empty-cart">
+        <p>Your cart is empty</p>
+        <button class="browse-button" id="browse-products" type="button">Browse Products</button>
+      </div>
+      <div class="cart-summary">
+        <span>Total</span>
+        <strong id="cart-total">0 ETB</strong>
+      </div>
+      <div class="checkout-balance">Demo balance: <strong id="checkout-balance">0 ETB</strong></div>
+      <p class="demo-label">Demo Mode — No real money is processed.</p>
+      <button class="checkout-button" id="checkout-button" type="button">Checkout</button>
+      <button class="confirm-button" id="confirm-purchase" type="button" hidden>Confirm Demo Purchase</button>
+      <p class="checkout-message" id="checkout-message" role="status" aria-live="polite"></p>
+      <div class="purchase-success" id="purchase-success" role="status" aria-live="polite" hidden></div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="account-modal" hidden>
+    <section class="account-panel" role="dialog" aria-modal="true" aria-labelledby="account-title">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">Your details</p>
+          <h2 id="account-title">Account</h2>
+        </div>
+        <button class="close-button" id="close-account" type="button" aria-label="Close account">&times;</button>
+      </div>
+      <div id="account-content"></div>
+    </section>
+  </div>
+</body>
+</html>
